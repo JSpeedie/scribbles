@@ -9,10 +9,10 @@ CC = gcc -ggdb
 
 # `compile` first because we want `make` to just compile the program, and the
 # default target is always the the first one that doesn't begin with "."
-compile: server client
+compile: pipe1 pipe2
 
-server: server.c
-	$(CC) $(CFLAGS) server.c $(INCS) $(LIBS) -o server
+pipe1: pipe1.c
+	$(CC) $(CFLAGS) pipe1.c $(INCS) $(LIBS) -o pipe1
 
-client: client.c
-	$(CC) $(CFLAGS) client.c $(INCS) $(LIBS) -o client
+pipe2: pipe2.c
+	$(CC) $(CFLAGS) pipe2.c $(INCS) $(LIBS) -o pipe2
