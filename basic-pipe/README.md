@@ -14,7 +14,7 @@ This will compile both the `pipe1` and `pipe2` binaries in the current directory
 
 ### Running
 
-In one terminal, start the server:
+In one terminal, run either program by entering one of:
 
 ```bash
 ./pipe1
@@ -26,9 +26,10 @@ In one terminal, start the server:
 ### pipe1
 
 `pipe1` is a simple program which forks into two processes, the parent and
-child. The child runs a hardcoded shell command. Prior to this, however, the
-child redirects its `stdout` to a pipe which is connected to the parent who
-receives this data and then writes it to its `stdout`.
+child. The child runs a hardcoded shell command which outputs to `stdout` the
+contents of `pipe1.c`. Prior to this, however, the child redirects its `stdout`
+to a pipe which is connected to the parent who receives this data and then
+writes it to its `stdout`.
 
 Functionally this program is a waste. It functions as if we only ever ran the
 shell command, but forks and sends data through a pipe unnecessarily. The
@@ -39,6 +40,7 @@ reading from a pipe.
 
 ### pipe2
 
-`pipe2` is functionally identical to `pipe1`, but it collects all the output
-from the shell command produced by the child process in memory for our
-convenience, should we so desire to have that.
+`pipe2` is functionally identical to `pipe1` (except that its hardcoded shell
+command outputs the contents of `pipe2.c` rather than `pipe1.c`), but it
+collects all the output from the shell command produced by the child process in
+memory for our convenience, should we so desire to have that.
