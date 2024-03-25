@@ -61,6 +61,8 @@ the code:
 (gdb) s       // Same as the previous command, but using the shorthand
 (gdb) continue    // Run the program until it hits the next breakpoint
 (gdb) c           // Same as the previous command, but using the shorthand
+(gdb) finish    // Run the program until it returns from the current function
+(gdb) fin       // Same as the previous command, but using the shorthand
 ```
 
 ## 5.2. Checking the state of variables
